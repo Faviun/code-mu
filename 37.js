@@ -26,3 +26,52 @@ const function2 = (arr1, arr2) => {
 };
 
 function2([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
+
+// Сделайте функцию, которая будет возвращать случайное число. Функция не должна возвращать одно и тоже число два раза подряд.
+
+// const function3 = () => {
+//     let arr = [];
+//     let last;
+//     for (let i = 0; i < 10; i++) {
+//         let numb = getRandomNumber(1, 3);
+//         if (last === numb) {
+//             do {
+//                 numb = getRandomNumber(1, 3);
+//             } while (numb === last);
+//         } else {
+//             arr.push(numb);
+//         }
+//         last = numb;
+//     }
+//     console.log(arr);
+// };
+
+// function getRandomNumber(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getUniqueRandomNumber(min, max) {
+    let lastNumber = null;
+
+    return function () {
+        let randomNumber;
+        do {
+            randomNumber = getRandomNumber(min, max);
+        } while (randomNumber === lastNumber);
+
+        lastNumber = randomNumber;
+        return randomNumber;
+    };
+}
+
+const generateRandomNumber = getUniqueRandomNumber(1, 3);
+
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
