@@ -54,7 +54,7 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getUniqueRandomNumber(min, max) {
+function function3(min, max) {
     let lastNumber = null;
 
     return function () {
@@ -68,10 +68,30 @@ function getUniqueRandomNumber(min, max) {
     };
 }
 
-const generateRandomNumber = getUniqueRandomNumber(1, 3);
+const generateRandomNumber = function3(1, 3);
 
-console.log(generateRandomNumber());
-console.log(generateRandomNumber());
-console.log(generateRandomNumber());
-console.log(generateRandomNumber());
-console.log(generateRandomNumber());
+// console.log(generateRandomNumber());
+// console.log(generateRandomNumber());
+// console.log(generateRandomNumber());
+// console.log(generateRandomNumber());
+// console.log(generateRandomNumber());
+
+// Сделайте функцию, которая параметром будет принимать массив и элемент и возвращать следующий за ним элемент. Смотрите пример:
+// let arr = [1, 2, 3, 4, 5];
+// func(arr, 1); // 2
+// func(arr, 4); // 5
+// func(arr, 5); // 1
+
+const function4 = (arr, number) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === number) {
+            i === arr.length - 1
+                ? console.log(arr[0])
+                : console.log(arr[i + 1]);
+        }
+    }
+
+    // console.log(nextNumber);
+};
+
+function4([1, 2, 3, 4, 5], 5);
