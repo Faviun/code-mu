@@ -70,11 +70,11 @@ function function3(min, max) {
 
 const generateRandomNumber = function3(1, 3);
 
-// console.log(generateRandomNumber());
-// console.log(generateRandomNumber());
-// console.log(generateRandomNumber());
-// console.log(generateRandomNumber());
-// console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
+console.log(generateRandomNumber());
 
 // Сделайте функцию, которая параметром будет принимать массив и элемент и возвращать следующий за ним элемент. Смотрите пример:
 // let arr = [1, 2, 3, 4, 5];
@@ -90,8 +90,6 @@ const function4 = (arr, number) => {
                 : console.log(arr[i + 1]);
         }
     }
-
-    // console.log(nextNumber);
 };
 
 function4([1, 2, 3, 4, 5], 5);
